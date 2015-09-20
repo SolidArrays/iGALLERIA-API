@@ -163,7 +163,7 @@ iGALLERIA/iVet Mediaへ送信する情報や処理のカスタマイズに関す
 |:--:|:------------------------------------------|:--:|:--|:--|:--|:--|
 |    |<font color="maroon"><b>iG_SEND_File</b></font>| → | Ｔ/Ｘ |送信するファイルパス|*無し*||
 |任意|<font color="maroon"><b>iG_SEND_To</b></font>| → | Ｌ |アップロード先フォルダー番号。<a href="#ig_upload"><b><i>iG_Upload</i></b></a>のみ使用|*無し*||
-|任意|<font color="maroon"><b>iG_SEND_Attr</b></font>| → | Ｏ |アップロードするファイルの属性を集めたオブジェクト。<a href="#ig_upload_media"><b><i>iG_Upload_Media</i></b></a>の場合に限り必須、また<a href="#%E5%8C%BB%E7%99%82%E5%B1%9E%E6%80%A7%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><b><i>医療属性</i></b></a>オブジェクトを必ず指定する必要有り。|*無し*||
+|任意|<font color="maroon"><b>iG_SEND_Attr</b></font>| → | Ｏ |アップロードするファイルの属性を集めたオブジェクト。<br><a href="#ig_upload_media"><b><i>iG_Upload_Media</i></b></a>の場合に限り必須、また<a href="#%E5%8C%BB%E7%99%82%E5%B1%9E%E6%80%A7%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><b><i>医療属性</i></b></a>オブジェクトを必ず指定する必要有り。|*無し*||
 |任意|<font color="maroon"><b>iG_SEND_AbortOnErr</b></font>| → | Ｔ |エラーが発生したら処理をアボートするか否か|True||
 |任意|<font color="maroon"><b>iG_SEND_Callbacks</b></font>| → | Ｌ |コールバックメソッドの名前|*無し*|"OnProgress"|
 
