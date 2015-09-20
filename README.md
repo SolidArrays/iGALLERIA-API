@@ -148,7 +148,7 @@ iGALLERIA/iVet Mediaとの接続に関する情報を渡すために使われま
 |    |プロパティ名|    | 型 | 説明 | デフォルト値 | 値の例 |
 |:--:|:------------------------------------------|:--:|:--|:--|:--|:--|
 |    |<font color="maroon"><b>iG_CON_Host</b></font>| → | Ｔ |接続先IPアドレス|*なし*|192.168.1.100|
-|任意|<font color="maroon"><b>iG_CON_Port</b></font>| → | Ｔ |ポート番号|"80"||
+|任意|<font color="maroon"><b>iG_CON_Port</b></font>| → | Ｌ |ポート番号|80||
 |  　|<font color="maroon"><b>iG_CON_Name</b></font>| → | Ｔ |ログイン名|*なし*|taro|
 |  　|<font color="maroon"><b>iG_CON_Pass</b></font>| → | Ｔ |ログインパスワード|*なし*|hoge|
 |任意|<font color="maroon"><b>iG_CON_Timeout</b></font>| → | Ｌ |接続タイムアウト。単位は秒数。|15||
