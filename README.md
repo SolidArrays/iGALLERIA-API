@@ -5,11 +5,17 @@ iGALLERIA / iVet Mediaとの通信用 4D Component
 
 + <a href="#現行バージョン"><b>現行バージョン</b></a>
 + <a href="#ダウンロード"><b>ダウンロード</b></a>
-+ <a href="#インストール方法"><b>インストール方法</b></a>
- + <a href="#ファイルの配置"><b>ファイルの配置</b></a>
++ <a href="#%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E6%A7%8B%E6%88%90"><b>ファイル構成</b></a>
  + <a href="#データベース設定"><b>データベース設定</b></a>
 + <a href="#エクスプローラでの表示"><b>エクスプローラでの表示</b></a>
 + <a href="#メソッドエディタでの表示"><b>メソッドエディタでの表示</b></a>
++ <a href="#オブジェクト"><b>オブジェクト</b></a>
+ - <a href="#%E6%8E%A5%E7%B6%9A%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><b><i>接続オブジェクト</i></b></a>
+ - <a href="#%E9%80%81%E4%BF%A1%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><b><i>送信オブジェクト</i></b></a>
+ - <a href="#%E5%8F%97%E4%BF%A1%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><b><i>受信オブジェクト</i></b></a>
+     * <a href="#%E5%8C%BB%E7%99%82%E5%B1%9E%E6%80%A7%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><b><i>医療属性オブジェクト</i></b></a>
+ - <a href="#%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><b><i>エラーオブジェクト</i></b></a>
+     * <a href="#%E5%9F%BA%E7%A4%8E%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><b><i>基礎エラーオブジェクト</i></b></a>
 + <a href="#メソッドリファレンス"><b>メソッドリファレンス</b></a>
  - <a href="#ig_login"><b><i>iG_Login</i></b></a>
  - <a href="#ig_logout"><b><i>iG_Logout</i></b></a>
@@ -37,37 +43,41 @@ iGALLERIA / iVet Mediaとの通信用 4D Component
 * 今後、アップロード系のコマンドは以下の３つに細分化される予定です。
  + iG_Upload：汎用アップロード
  + iG_Upload_DICOM：カルテAPI向け（DICOMファイル）
- + <a href="#ig_upload_media"><b><i>iG_Upload_Media</i></b></a>：カルテAPI向け（DICOM以外のメディアファイル）
-* 現行のv0.7では、<a href="#ig_upload_media"><b><i>iG_Upload_Media</i></b></a>だけが実装済みです。
+ + <a href="#ig_upload_media--ivet-media%E7%94%A8"><b><i>iG_Upload_Media</i></b></a>：カルテAPI向け（DICOM以外のメディアファイル）
+* 現行のv0.7では、<a href="#ig_upload_media--ivet-media%E7%94%A8"><b><i>iG_Upload_Media</i></b></a>だけが実装済みです。
 
 <sup><a href="#目次"> :arrow_up: 目次へ戻る</a></sup>
 
 #__ダウンロード__
 
 コンポーネントファイル込みのサンプルデータベースと
-API接続に対応する機能を実装したiGALLERIA（東大仕様）を
-tr.igalleria.jpのiGALLERIAにアップロードしてあります。
+API接続に対応する機能を実装したiVet Mediaを
+tr.igalleria.jpの「iGALLERIA」フォルダにアップロードしてあります。
 
 :arrow_upper_right: <a href="http://tr.igalleria.jp:8080/CATEGORY/000-024/index.html" target=_blank>「iGALLERIA API」フォルダー</a>
 
-以下の２つを登録しています：
-▼ SampleDB（API Ver 0.6 コンポーネント組み込み済み）
-▼ iGalleria (東大仕様＋API Ver 0.6 対応)
+0.7の方のZip圧縮ファイルは以下の４つのファイル・フォルダを内包しています：
 
-<font color="red"><b>※11/23 PM11 : Ver. 0.6 に更新</b></font>
++ iG_API_v0.7-SampleDB_Media.4dbase（サンプルDB、API Ver 0.7 コンポーネント組み込み済み）
++ iVet-Media+API07.4dbase (東大仕様＋API Ver 0.7 対応)
++ images（アップロードテスト用画像を集めたフォルダ）
++ READ_ME.rtfd（簡単な説明書）
+
+
+<font color="red"><b>※2015/9/20 PM19時頃 : Ver. 0.7 に更新</b></font>
 
 <sup><a href="#目次"> :arrow_up: 目次へ戻る</a></sup>
 
-#__インストール方法__
-##ファイルの配置
-![FinderScreenSnapz001.png](https://qiita-image-store.s3.amazonaws.com/1537/55833/a99468d6-b55b-bb95-a07c-26af1ba8fa1e.png)
-__▲ サンプルDB__
+#__ファイル構成__
+
+![FinderScreenSnapz001.jpg](https://solidarrays.qiita.com/files/108b221e-5ea5-2f29-6167-179027d56d9e.jpeg)
+__▲ サンプルDB__と__iVet_Media__
 
 ご存知の通りデータベースファイルは実際にはパッケージですので
 中を開いてみる事が出来ます．．．．
 
+![FinderScreenSnapz002.jpg](https://solidarrays.qiita.com/files/f80f17b4-b139-adf3-6364-6cffbe953773.jpeg)
 
-![FinderScreenSnapz002+.png](https://qiita-image-store.s3.amazonaws.com/1537/55833/c011e7e4-cb1a-f348-678e-e6b547d808e8.png)
 __▲ パッケージを開いたところ__
 
 コンポーネントファイルは「__Components__」フォルダに入っているDBファイルです。
@@ -119,7 +129,66 @@ __▲「セキュリティ」ページの「コンポーネントの〝On Host D
 
 <sup><a href="#目次"> :arrow_up: 目次へ戻る</a></sup>
 
+
+
+
+
+#__オブジェクト__
+当コンポーネントのメソッドでは、引数としてオブジェクトを使う事が多く、また、それらは共通して使われる物が幾つかあります。ここでは、それらの内部プロパティ構成を列挙します。各プロパティの名称は全てカスタム定数を用意してありますので、コードの保守性の観点から出来るだけ定数で指定するようにして下さい。各オブジェクトごとに、決まったプリフィックスを付けてありますので、メソッドエディタに入力する時はタイプアヘッドを適宜活用して頂けます。
+各プロパティに渡せるデータの型を示す頭文字は以下の通りです。
+
+Ｌ＝Longint、Ｔ＝Text、Ｂ＝Boolean、Ｄ＝Date、Ｏ＝Object、Ｐ＝Pointer、Ｘ＝Array
+
+オブジェクトの特性として、プロパティの型は固定されませんので、実際は何でも渡せますが、当コンポーネントの仕様として下記に示す通りのデータ型を想定して機能が構成されています。プロパティによっては、複数のデータ型の使用を許容しているものもあります。
+
+##__接続オブジェクト__
+多くのメソッドで<font color="green"><b>$1</b></font>として渡すオブジェクト。
+iGALLERIA/iVet Mediaとの接続に関する情報を渡すために使われます。
+
+|    |プロパティ名|    | 型 | 説明 | デフォルト値 | 値の例 |
+|:--:|:------------------------------------------|:--:|:--|:--|:--|:--|
+|    |<font color="maroon"><b>iG_CON_Host</b></font>| → | Ｔ |接続先IPアドレス|*なし*|192.168.1.100|
+|任意|<font color="maroon"><b>iG_CON_Port</b></font>| → | Ｔ |ポート番号|"80"||
+|  　|<font color="maroon"><b>iG_CON_Name</b></font>| → | Ｔ |ログイン名|*なし*|taro|
+|  　|<font color="maroon"><b>iG_CON_Pass</b></font>| → | Ｔ |ログインパスワード|*なし*|hoge|
+|任意|<font color="maroon"><b>iG_CON_Timeout</b></font>| → | Ｌ |接続タイムアウト。単位は秒数。|15||
+|任意|<font color="maroon"><b>iG_CON_SSL</b></font>| → | Ｂ |SSL通信の使用|False||
+
+
+##__送信オブジェクト__
+多くのメソッドで<font color="green"><b>$2</b></font>として渡すオブジェクト。
+iGALLERIA/iVet Mediaへ送信する情報や処理のカスタマイズに関する値を渡すために使われます。
+
+|    |プロパティ名|    | 型 | 説明 | デフォルト値 | 値の例 |
+|:--:|:------------------------------------------|:--:|:--|:--|:--|:--|
+|    |<font color="maroon"><b>iG_SEND_File</b></font>| → | Ｔ/Ｘ |送信するファイルパス|*無し*||
+|任意|<font color="maroon"><b>iG_SEND_To</b></font>| → | Ｌ |アップロード先フォルダー番号。<a href="#ig_upload"><b><i>iG_Upload</i></b></a>のみ使用|*無し*||
+|任意|<font color="maroon"><b>iG_SEND_Attr</b></font>| → | Ｏ |アップロードするファイルの属性を集めたオブジェクト。<a href="#ig_upload_media"><b><i>iG_Upload_Media</i></b></a>の場合に限り必須、また<a href="#%E5%8C%BB%E7%99%82%E5%B1%9E%E6%80%A7%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><b><i>医療属性</i></b></a>オブジェクトを必ず指定する必要有り。|*無し*||
+|任意|<font color="maroon"><b>iG_SEND_AbortOnErr</b></font>| → | Ｔ |エラーが発生したら処理をアボートするか否か|True||
+|任意|<font color="maroon"><b>iG_SEND_Callbacks</b></font>| → | Ｌ |コールバックメソッドの名前|*無し*|"OnProgress"|
+
+###__医療属性オブジェクト__
+*〜〜（執筆中）〜〜*
+
+
+##__受信オブジェクト__
+*〜〜（執筆中）〜〜*
+
+##__エラーオブジェクト__
+*〜〜（執筆中）〜〜*
+
+
+###__基礎エラーオブジェクト__
+*〜〜（執筆中）〜〜*
+
+
+
+
+
 #__メソッドリファレンス__
+
+
+
 ##<font color="#428BCA"><b>iG_Login</b></font>
 api_err &nbsp; := &nbsp; <I><b>iG_Login</b></I> &nbsp; ( &nbsp; conn &nbsp; ; &nbsp; error &nbsp; )
 
@@ -151,6 +220,7 @@ iGalleriaへログインする。
 <li> <font color="maroon"><b>iG_CON_Name</b></font>：【Ｔ】ログイン名
 <li> <font color="maroon"><b>iG_CON_Pass</b></font>：【Ｔ】ログインパスワード
 <li> <font color="maroon"><b>iG_CON_Timeout</b></font>：【Ｌ】iGalleriaとの通信におけるタイムアウト秒（省略可能、省略時はAPIプリファレンス設定（参考：<a href="#ig_Pref_Get"><b><i>iG_Pref_Get</i></b></a>）の<font color="maroon"><b>iG_PRef_Timeout</b></font>の値が採用されます。初期値は１５秒。）
+<li> <font color="maroon"><b>iG_CON_SSL</b></font>：【Ｂ】SSLを使う場合には<b>True</b>（省略可能、省略時は<b>False</b>として扱う）
 </ul>
 </dd>
 
@@ -304,7 +374,10 @@ api_err &nbsp; := &nbsp; <I><b>iG_Upload_Media</b></I> &nbsp; ( &nbsp; conn &nbs
 　__iVet Media__専用の__DICOM以外__のアップロードメソッド。
 アップロードされた画像やファイルはカルテAPIのWebArea（Media側）から閲覧可能になります。
 　アップロード出来るファイルにはサイズ制限があります。デフォルトで<b><font color="red">１００MB</font></b>に設定されています。このサイズを超えるファイルを渡した場合はパラメータエラーになります。この設定値を変更するには <b><i><a href="#ig_pref_set">iG_Pref_Set</a></i></b> を使います。
-　引数に配列を使う事でアップロードするファイルを複数個指定する事が出来ますが、１度に指定出来るファイルの数は最大で９９９個までです。それ以上は、２度、３度とこのメソッドの実行を繰り返して下さい。
+<pre>このサイズ未満ならアップロードの成功を保証するというわけではありません。
+サーバー側のメモリ状況によっては、このサイズ未満でもエラーになる可能性はあります。
+あくまで、どれくらい大きなファイルまでアップロードをトライさせても良いかを決めるだけです。</pre>
+　アップロードするファイルパスを渡す変数に配列を使う事で複数個のファイルを指定する事が出来ますが、１度に指定出来るファイルの数は最大で__９９９個まで__です。それ以上は、２度、３度とこのメソッドの実行を繰り返して下さい。
 
 ###__引数__
 　引数１〜４全てオブジェクト型。<font color="green"><b>__$3__</b></font>、<font color="green"><b>__$4__</b></font>は受け取り専用ですが使用は任意です。
@@ -332,7 +405,7 @@ api_err &nbsp; := &nbsp; <I><b>iG_Upload_Media</b></I> &nbsp; ( &nbsp; conn &nbs
     <li><font color="maroon"><b>iG_SEND_Attr_Note</b></font>{任意}【Ｔ】備考</li>
     </ul>
 複数のファイルをアップロードした場合は、それらの全てに共通する属性として、このオブジェクトで指定した値が書き込まれます。
-<li> <font color="maroon"><b>iG_SEND_BreakOnErr</b></font>　：{任意}【Ｂ】エラー発生時の処理続行可否<br>
+<li> <font color="maroon"><b>iG_SEND_AbortOnErr</b></font>　：{任意}【Ｂ】エラー発生時の処理続行可否<br>
 複数のファイルをアップロードする際、最後のファイル送信以前にエラーが発生した時、残りのファイルのアップロードを続行せずに処理を終了するか否かを指定するプロパティです。<br>
 <b>True</b>・・・処理を終了（デフォルト）<br>
 <b>False</b>・・・処理を続行<br>
@@ -345,7 +418,9 @@ api_err &nbsp; := &nbsp; <I><b>iG_Upload_Media</b></I> &nbsp; ( &nbsp; conn &nbs
 
 <b> :loudspeaker: <i>アップロード先について</i></b>
 <pre>
-<i>このメソッドの場合、アップロード先のフォルダーＩＤはコンポーネントが内部的に補いますので、他のUpload系メソッド（iG_Upload、iG_Upload_Send）のようにiG_SEND_Toプロパティを設定する必要はありません。</i><br><br>
+<i>このメソッドの場合、アップロード先のフォルダーＩＤはコンポーネントが内部的に補いますので、
+他のUpload系メソッド（iG_Upload、iG_Upload_Send）のように
+iG_SEND_Toプロパティを設定する必要はありません。</i><br><br>
 </pre>
 
 </dd>
@@ -356,82 +431,121 @@ api_err &nbsp; := &nbsp; <I><b>iG_Upload_Media</b></I> &nbsp; ( &nbsp; conn &nbs
 </dd>
 
 <dt>error（任意）</dt>
-<dd><a href="#ig_xxx_xxx"><b>【エラーオブジェクト】</b></a>アップロードの成否に関する詳細な情報が返ってきます。初期化済みオブジェクトを与えておくと、メソッド実行後はオブジェクトは下記のようなプロパティ構造になっています：
+<dd><a href="#ig_xxx_xxx"><b>【エラーオブジェクト】</b></a>アップロードの成否に関する詳細な情報が返ってきます。初期化済みオブジェクトを与えておくと、メソッド実行後は下記のようなプロパティ構造になっています：
+
+    <dl>
+      <dt>・<font color="maroon"><b>iG_ERR_Count</b></font>：【Ｌ】エラーの発生回数</dt>
+            <dd>
+            例えば、１０個中３個のファイルのアップロードでエラーが起きたらこのプロパティの値は３です。プロパティ<b>iG_ERR_ArrSeqNo</b>、<b>iG_ERR_ArrObject</b>の要素数と一致します。<br>
+            </dd>
+      <dt>・<font color="maroon"><b>iG_ERR_ArrSeqNo</b></font>：【Ｘ】エラーが起きたアップロード番号（LONGINT配列）</dt>
+            <dd>
+            例えば、３番目と５番目のファイルのアップロードにエラーが生じた場合、このプロパティの示す配列の中身は [3,5] となります。
+            </dd>
+      <dt>・<font color="maroon"><b>iG_ERR_ArrObject</b></font>：【Ｘ】各アップロード毎のエラー情報（オブジェクト配列）</dt>
+            <dd>
+            エラーの発生した回数分だけこの配列に要素が作られ、各要素の中身は<a href="#ig_xxx_xxx"><b>【基礎エラーオブジェクト】</b></a>です。
+            </dd>
+      <dt>・<font color="maroon"><b>iG_ERR_Aborted</b></font>：【Ｂ】処理が中断終了されたか否かを示します。</dt>
+            <dd>
+            エラー、もしくはコールバックメソッドの記述によって、全てのファイルをアップロードする前に処理がアボートされた場合はこのプロパティの値は<b>True</b>です。予定された全てのファイルの送信を行った場合は<b>False</b>です。
+<br><br>
+<b> :loudspeaker: <i>注意！</i>アボートはエラーの有無とは無関係</b><pre>
+送信オブジェクトの<b>iG_SEND_AbortOnErr</b>プロパティの設定やコールバックメソッドの記述内容によっては、
+途中で何度エラーが発生しても最後のファイルの送信まで処理を続行させることが可能ですので、
+このプロパティの値が<b>False</b>であることが必ずしも全ファイルのアップロード成功を意味するわけではありません。
+また、処理の成否に関係なくコールバックメソッドの記述内容によっては処理を途中でアボート出来ますので、
+このプロパティの値が<b>True</b>だからといって、必ずしもエラーが起きていた訳でもありません。</pre>
+            </dd>
+    </dl>
+
+上記以外にもこの<font color="green"><b>$4</b></font>=<b>error</b>引数は、コーディングの単純化を目的にした、プロパティ構成の冗長化が計られています。
+例えば、
+    <ul>
+      <li>メソッドにファイルを１個しか渡さなかった場合
+      <li>エラーが起きたら残りのアップロードを諦めて処理をアボートする設定（デフォルト）にしていた場合
+    </ul>
+このような設定で、エラーが発生した場合、詳細なエラー情報を保持するプロパティ<font color="maroon"><b>iG_ERR_ArrObjects</b></font>の値である配列には要素が１個しか無い事は明白です。そこで、この唯一の配列要素（オブジェクト型）の中身は、自動的に<font color="green"><b>$4</b></font>のトップレベルプロパティとしてもアクセス可能なように複製されています。v0.7時点では４つのプロパティで構成されるこのエラー詳細情報は以下の通りです：
 
     <ul>
-      <li> <font color="maroon"><b>iG_ERR_Num</b></font>：【Ｌ】$0に返る値と同じです。
-      <li> <font color="maroon"><b>iG_ERR_Msg</b></font>：【Ｔ】エラー内容を説明するメッセージです。
-      <li> <font color="maroon"><b>iG_ERR_4D</b></font>：【Ｌ】4Dのエラーコードです。
-      <li> <font color="maroon"><b>iG_ERR_HTTP</b></font>：【Ｌ】httpステータスコードです。
+      <li><font color="maroon"><b>iG_ERR_Num</b></font>：【Ｌ】メソッドの<font color="green"><b>$0</b></font>に返る値と同じです。</dt>
+      <li><font color="maroon"><b>iG_ERR_Msg</b></font>：【Ｔ】エラー内容を説明するメッセージです。</dt>
+      <li><font color="maroon"><b>iG_ERR_4D</b></font>：【Ｌ】4Dのエラーコードです。</dt>
+      <li><font color="maroon"><b>iG_ERR_HTTP</b></font>：【Ｌ】httpステータスコードです。</dt>
     </ul>
 
-    必ず全てのプロパティに情報が返ってくる訳ではありません。エラーの内容と原因次第です。
+エラーが起きていた場合でも、必ず全てのプロパティに情報が返ってくる訳ではありません。エラーの内容と原因次第です。
+もちろんエラー無しの場合は、すべてのプロパティの値は数値型なら0、文字型なら空です。
     <br><br>
 </dd>
 
 <dt>api_err</dt>
-<dd>エラー番号。大まかなエラー原因ごとにいくつかのエラーに分類されます。
+<dd>エラー番号。エラー原因ごとに大まかな分類を示す為の番号です。
 
 <ul>
- <li> 0：エラー無し（コマンド実行成功）
- <li> 1：パラメータエラー
- <li> 2：ネットワークエラー
- <li> 3：HTTPエラー（iGalleriaロジックエラー）
- <li> 4：予期せぬエラー
+ <li> <b>0</b>：エラー無し（全てのアップロード成功）
+ <li> <b>1</b>：パラメータエラー
+ <li> <b>2</b>：ネットワークエラー
+ <li> <b>3</b>：HTTPエラー（4Dエラー、iGalleriaロジックエラー含む）
+ <li> <b>4</b>：予期せぬエラー
+ <li> <b>-1</b>：複数ファイル送信時のエラー（個々のエラー内容は <b>iG_ERR_ArrObject</b>を参照のこと。 ）
 </ul>
 
 </dd>
 </dl>
 
-###補足
-連続したアップロード処理を行う場合に、出来るだけアップロードを短時間に終わらせることを想定して、このコマンド実行時点では、サムネール作成処理は自動的には発動させていない。ログアウトを実行する時に初めて、サムネール作成デーモンをRESUMEしている。（ <i><b><a href="#ig_logout">iG_Logout</a></b></i> コマンドが内部的に行っています。）
-　明示的に任意のタイミングでサムネール作成デーモンをRESUMEさせたい場合は、<i><b><a href="#ig_daemon_start">iG_Daemon_Start</a></b></i> メソッドを使う。
-
-　アップロード出来るファイルにはサイズ制限があります。デフォルトで<b><font color="red">１００MB</font></b>に設定されています。
-この設定を変更するには <b><i><a href="#ig_pref_set">iG_Pref_Set</a></i></b> を使います。ただし、このサイズ未満ならアップロードの成功を保証するものではありません。サーバー側のメモリ状況によっては、このサイズ未満でもエラーになる可能性はあります。あくまで、どれくらい大きなファイルまでアップロードをトライさせても良いかを決めるだけです。
-
+###__補足__
+このメソッドは、原則的には“オールオアナッシング”な挙動で処理を実行します。結果は「全てのファイルのアップロードに成功するか、１つもアップロードされないか」のいずれかです。この原則の適用から除外されるには、引数<font color="green"><b>$2</b></font>オブジェクトのプロパティ<font color="maroon"><b>iG_SEND_AbortOnErr</b></font>に<b>False</b>を渡してエラー発生時でも残りのアップロードを続行する設定にするか、プロパティ<font color="maroon"><b>iG_SEND_Callbacks</b></font>にメソッド名を渡して、ファイルの送信が１個終わる度にそのメソッドを実行するよう設定し、そのメソッドの<font color="green"><b>$0</b></font>に<b>常にTrueを返す</b>ように記述して処理を最後まで続行させるか、そのいずれかです。
+　このように設定した場合、全ファイルアップロードに成功しなくとも、成功したファイルだけiVet Media側に対応するレコードが作成されます。
 
 ###__実行例__
 <pre>
   // コネクション設定
-  〜 省略 〜
+  〜 省略 （iG_Loginのページを参照）〜
+
+  // ファイルパス取得
+  〜 省略 （システム変数Documentに値を得るものとする）〜
 
   // ログイン
 $err_num := iG_Login ($o_con)
 
 If ($err_num = 0)
    
-  // 送信オブジェクト、受信オブジェクト、エラーオブジェクト
-  C_OBJECT ($o_send; $o_resp; $o_err )
-  $o_send := OB_New // 初期化：送信データ用オブジェクト
+  // 変数定義とオブジェクト初期化
+  C_OBJECT ($o_send; $o_resp; $o_err; $o_attr )
   $o_resp := OB_New // 初期化：受信データ用オブジェクト
   $o_err  := OB_New // 初期化：エラー情報用オブジェクト
+
   // 送信データ
+  // - ファイルパス
   OB SET ($o_send; iG_SEND_File; Document)  // アップロードするファイルのフルパス
-  OB SET ($o_send; iG_SEND_To; 7)  // アップロード先のフォルダーID
+  // - 属性値データ
+  OB SET ($o_attr; iG_SEND_Attr_PatientID; "ABCD12345")  //…………………………………【必須】
+  OB SET ($o_attr; iG_SEND_Attr_AnimalType; "猫")  //……………………………………………………{任意}
+  OB SET ($o_attr; iG_SEND_Attr_Note; "前肢骨折、手術、山田動物病院、写真") //{任意}
+  OB SET ($o_send; iG_SEND_Attr; $o_attr)
 
   // アップロード
-  $err_num := iG_Upload_Send ($o_con; $o_send; $o_resp; $o_err)
+  $err_num := iG_Upload_Media ($o_con; $o_send; $o_resp; $o_err)
 
-  If ($err_num = 0)
-    CONFIRM("アップロード成功！ Webページで確認しますか？")
-    If ( OK = 1 )
-      // respオブジェクトからURLを構築
-      C_OBJECT($o_rbody)
-      $o_rbody := OB Get ($o_resp; iG_RESP_Body )
-      $URL  := OB Get($o_rbody;iG_RESP_Body_ItemURL)
-      $HOST := OB Get($o_con;"host";Is text)
-      $PORT := OB Get($o_con;"port";Is text)
-      If ($PORT#"")
-        $PORT := ":" + $PORT
-      End if 
-      $URL := "http://"+$HOST+$PORT+$URL
-      OPEN URL ($URL)  // v14 R2 までは OPEN WEB URL
-    End if
-    // ログアウト (サムネール作成をサーバーに指示)
-    $err_num := iG_Logout ($o_con)
+  // エラー情報表示
+  If ($err_num # 0)
+    C_LONGINT( $ErrAPI; $ErrHTTP; $Err4D )
+    C_TEXT($ErrMsg; $AlertText)
+    $ErrAPI  := OB Get ( $o_err; iG_ERR_Num; Is longint )
+    $ErrHTTP := OB Get ( $o_err; iG_ERR_HTTP; Is longint )
+    $Err4D   := OB Get ( $o_err; iG_ERR_4D;   Is longint )
+    $ErrMsg  := OB Get ( $o_err; iG_ERR_Msg;  Is text )
+    $AlertText:=\
+      "APIエラーコード："+String($ErrAPI)+"\n"+\
+      "HTTPステイタス："+String($ErrHTTP)+"\n"+\
+      "4Dエラーコード："+String($Err4D)+"\n"+\
+      "エラーメッセージ："+$ErrMsg
+    ALERT ($AlertText)
   End if
 
+  // ログアウト
+  $err_num := iG_Logout ($o_con)
 End if
 </pre>
 
