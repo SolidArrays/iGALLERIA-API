@@ -215,7 +215,7 @@ iGalleriaへログインする。
 使用可能なプロパティ一覧：
 
 <ul>
-<li> <font color="maroon"><b>iG_CON_Host</b></font>：【Ｌ】iGalleriaのIPアドレス
+<li> <font color="maroon"><b>iG_CON_Host</b></font>：【Ｔ】iGalleriaのIPアドレス
 <li> <font color="maroon"><b>iG_CON_Port</b></font>：【Ｌ】iGalleriaのPort番号（省略可能、省略時は80と見なす。）
 <li> <font color="maroon"><b>iG_CON_Name</b></font>：【Ｔ】ログイン名
 <li> <font color="maroon"><b>iG_CON_Pass</b></font>：【Ｔ】ログインパスワード
