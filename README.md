@@ -70,13 +70,13 @@ tr.igalleria.jpの「iGALLERIA」フォルダにアップロードしてあり�
 
 #__ファイル構成__
 
-![FinderScreenSnapz001.jpg](https://solidarrays.qiita.com/files/108b221e-5ea5-2f29-6167-179027d56d9e.jpeg)
+![FinderScreenSnapz001.jpg](http://tr.igalleria.jp:8080/1.jpg)
 __▲ サンプルDB__と__iVet_Media__
 
 ご存知の通りデータベースファイルは実際にはパッケージですので
 中を開いてみる事が出来ます．．．．
 
-![FinderScreenSnapz002.jpg](https://solidarrays.qiita.com/files/f80f17b4-b139-adf3-6364-6cffbe953773.jpeg)
+![FinderScreenSnapz002.jpg](http://tr.igalleria.jp:8080/2.jpg)
 
 __▲ パッケージを開いたところ__
 
